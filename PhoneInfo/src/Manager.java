@@ -41,15 +41,10 @@ public class Manager {
 	}
 
 	int matchName(String name) {
-		try {
-			for (int tmp = 0; tmp <= index; tmp++) {
-				if (name.equals(array[tmp].name)) {
-					return tmp;
-				}
+		for (int tmp = 0; tmp < index; tmp++) {
+			if (name.equals(array[tmp].name)) {
+				return tmp;
 			}
-		} catch (Exception NullPointerException) {
-			System.out.println("찾지 못하였습니다..");
-			return -1;
 		}
 		System.out.println("찾지 못하였습니다..");
 		return -1;
