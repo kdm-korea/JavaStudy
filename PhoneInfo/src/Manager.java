@@ -29,14 +29,13 @@ public class Manager {
 		}
 	}
 
+	//void readData() {
 	PhoneInfo readData() {
 		System.out.println("이름 : ");
 		String name = Main.sc.nextLine();
 		System.out.println("핸드폰 번호 : ");
 		String phoneNumber = Main.sc.nextLine();
-		System.out.println("생일 : ");
-		String birthday = Main.sc.nextLine();
-		PhoneInfo info = new PhoneInfo(name, phoneNumber, birthday);
+		PhoneInfo info = new PhoneInfo(name, phoneNumber);
 		return info;
 	}
 
