@@ -9,7 +9,7 @@ public class Main {
 
 			switch (showMenu()) {
 			case 1:
-				// mg.save();
+				mg.choiceInput();
 				continue;
 			case 2:
 				mg.search();
@@ -24,40 +24,8 @@ public class Main {
 				continue;
 			}
 			System.out.println("종료되었습니다");
-			break;
+			return;
 		}
-
-	}
-
-	public static void choiceInput() {
-	Manager mg = new Manager();
-		while (true) {
-			switch (choice()) {
-			case 1:
-				mg.save();
-				break;
-			case 2:
-
-				break;
-			case 3:
-
-				break;
-			default:
-				System.out.println("잘못된 선택입니다.");
-				continue;
-			}
-		}
-	}
-
-	public static int choice() {
-		System.out.println("선택하세요..");
-		System.out.println("1.일반");
-		System.out.println("2.대학");
-		System.out.println("3.회사");
-		System.out.println("4.나가기");
-		int choose = sc.nextInt();
-		sc.nextLine();
-		return choose;
 	}
 
 	public static int showMenu() {
