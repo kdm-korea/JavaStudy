@@ -1,28 +1,32 @@
 
-public class Manager {
+public class Manager implements ChooseInputMenu{
 	PhoneInfo[] array = new PhoneInfo[100];
 	int index = 0;
 
 	public void choiceInput() {
 		while (true) {
-			switch (choice()) {
-			case 1:
-				array[index++] = readFridInfo();
-				array[index - 1].showInfo();
-				break;
-			case 2:
-				array[index++] = readUnivInfo();
-				array[index - 1].showInfo();
-				break;
-			case 3:
-				array[index++] = readCompanyInfo();
-				array[index - 1].showInfo();
-				break;
-			case 4:
-				return;
-			default:
-				System.out.println("잘못된 선택입니다.");
-				continue;
+			try {
+				switch (choice()) {
+				case infoSimple:
+					array[index++] = readFridInfo();
+					array[index - 1].showInfo();
+					break;
+				case infoUnive:
+					array[index++] = readUnivInfo();
+					array[index - 1].showInfo();
+					break;
+				case infoCompany:
+					array[index++] = readCompanyInfo();
+					array[index - 1].showInfo();
+					break;
+				case programReturn:
+					return;
+				default:
+					System.out.println("잘못된 선택입니다.");
+					continue;
+				}
+			} catch (Exception e) {
+				System.out.println("제대로 된 값을 입력하십시오.");
 			}
 		}
 	}

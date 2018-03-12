@@ -1,29 +1,33 @@
 import java.util.Scanner;
 
-public class Main {
+public class Main implements ChooseMainMenu{
 	public static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		Manager mg = new Manager();
 		while (true) {
-
-			switch (showMenu()) {
-			case 1:
-				mg.choiceInput();
-				continue;
-			case 2:
-				mg.search();
-				continue;
-			case 3:
-				mg.delete();
-				continue;
-			case 4:
-				break;
-			default:
-				System.out.println("잘못된 선택입니다.");
-				continue;
+			try {
+				switch (showMenu()) {
+				case dataInput:
+					mg.choiceInput();
+					continue;
+				case dataSearch:
+					mg.search();
+					continue;
+				case dataDelete:
+					mg.delete();
+					continue;
+				case programExit:
+					System.out.println("종료되었습니다");
+					break;
+				default:
+					System.out.println("잘못된 선택입니다.");
+					continue;
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println("제대로 된 값을 입력하십시오.");
 			}
-			System.out.println("종료되었습니다");
 			return;
 		}
 	}
